@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white dark:bg-gray-800  rounded-xl shadow-lg overflow-hidden w-64 transition-all duration-300 hover:shadow-xl border border-gray-200 dark:border-gray-700">
+  <div class=" w-full bg-white dark:bg-gray-800  rounded-xl shadow-lg overflow-hidden  transition-all duration-300 hover:shadow-xl border border-gray-200 dark:border-gray-700">
     <div class="relative h-full flex flex-col">
       <!-- Imagen y contenedor principal -->
       <div class="relative h-48 overflow-hidden">

@@ -21,20 +21,28 @@
         v-else
         class="flex justify-center items-center min-h-screen"
     >
-      <div class="max-w-7xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <ProductCard
-            v-for="product in products"
-            name="Nombre del producto"
-            partType="Tipo de parte"
-            imageUrl="https://pngimg.com/d/engine_PNG20.png"
-            price="$99.99"
-            :isFavorite="false"
-            :rating="4.5"
-            @favoriteClick="handleFavoriteClick"
-        />
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+            class="grid grid-cols-2
+             sm:grid-cols-3
+             md:grid-cols-4
+             lg:grid-cols-5
+             gap-4 sm:gap-6 lg:gap-8
+             animate-fade-in"
+        >
+          <ProductCard
+              v-for="product in products"
+              name="Nombre del producto"
+              partType="Tipo de parte"
+              imageUrl="https://pngimg.com/d/engine_PNG20.png"
+              price="$99.99"
+              :isFavorite="false"
+              :rating="4.5"
+              @favoriteClick="handleFavoriteClick"
+          />
+        </div>
       </div>
     </div>
-
     <!-- Empty State -->
     <div v-if="!isLoading && !error && products.length === 0" class="text-center py-8 text-gray-500">
       No products found.
@@ -43,10 +51,10 @@
 </template>
 
 <script setup>
-import ProductCard  from './ProductCard.vue'
-import { useProducts } from '../composables/useProducts'
+import ProductCard from './ProductCard.vue'
+import {useProducts} from '../composables/useProducts'
 
-const { products, isLoading, error, fetchProducts } = useProducts()
+const {products, isLoading, error, fetchProducts} = useProducts()
 
 const handleFavoriteClick = (productId) => {
   // Aquí iría la lógica para manejar el favorito
