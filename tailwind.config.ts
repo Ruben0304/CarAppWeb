@@ -12,7 +12,7 @@ export default {
         // Color principal (rgb(88, 133, 243))
         'primary': {
           DEFAULT: '#5885F3',
-          light: '#7AA1F5',  // Versión más clara
+          light: '#5885F3',  // Versión más clara
           dark: '#1c2431',   // Versión más oscura
         },
 
