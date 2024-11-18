@@ -7,13 +7,13 @@ export default {
     extend: {
       colors: {
         // Color oscuro principal (dark: rgb(41, 41, 46))
-        'dark-main': '#29292E',
+        'dark-main': '#18181a',
 
         // Color principal (rgb(88, 133, 243))
         'primary': {
           DEFAULT: '#5885F3',
           light: '#7AA1F5',  // Versión más clara
-          dark: '#4067D1',   // Versión más oscura
+          dark: '#1c2431',   // Versión más oscura
         },
 
         // Color de fondo para gradiente
