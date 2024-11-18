@@ -1,8 +1,10 @@
 // nuxt.config.ts
+
+
 export default defineNuxtConfig({
   // Fecha de compatibilidad de Nuxt
   compatibilityDate: '2024-04-03',
-  
+
   // Activar devtools para desarrollo
   devtools: { enabled: true },
   

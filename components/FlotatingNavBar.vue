@@ -1,14 +1,14 @@
 <template>
-  <nav class="fixed top-0 left-0 w-full z-50 px-4 py-2 transition-all duration-300 ease-in-out">
+  <nav class="fixed top-5 left-0 w-full z-50 px-4 py-2 transition-all duration-300 ease-in-out">
     <div class="max-w-6xl mx-auto">
       <!-- Container principal con efecto neón -->
       <div
-          class="relative bg-bg-gradient-start/20 dark:bg-dark-main
-               backdrop-blur-lg rounded-2xl px-4 py-2
-               shadow-lg transition-all duration-300
-               dark:shadow-[0_0_15px_rgba(88,133,243,0.15)]
-               dark:border dark:border-primary/30
-               hover:dark:shadow-[0_0_20px_rgba(88,133,243,0.25)]
+          class="relative bg-bg-gradient-start bg-opacity-20  dark:bg-dark-main
+               dark:bg-opacity-20 backdrop-blur-lg rounded-2xl px-4 py-2
+                transition-all duration-300
+               shadow-[0_0_15px_rgba(88,133,243,0.15)]
+               border border-primary/30
+               hover:shadow-[0_0_20px_rgba(88,133,243,0.25)]
                animate-fade-in"
       >
         <!-- Desktop Layout -->
