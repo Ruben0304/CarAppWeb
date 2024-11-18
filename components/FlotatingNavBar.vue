@@ -15,7 +15,7 @@
         <div class="flex justify-between items-center">
           <!-- Logo -->
           <div class="flex items-center space-x-2">
-            <img src="" alt="Logo" class="w-8 h-8" />
+            <img src="/assets/img/th.jpeg" alt="Logo" class="w-8 h-8 rounded-full" />
             <span class="text-xl font-bold text-dark-main dark:text-bg-gradient-start">
               CarApp
             </span>
