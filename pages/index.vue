@@ -112,8 +112,6 @@
           <div class="flex justify-center space-x-6">
             <a
                 href="#"
-                @mouseover="scaleUp($event)"
-                @mouseleave="scaleDown($event)"
                 class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"
             >
               <FontAwesomeIcon :icon="faAndroid" style="color: forestgreen" class="mr-2 w-6 h-6" />
@@ -121,8 +119,6 @@
             </a>
             <a
                 href="#"
-                @mouseover="scaleUp($event)"
-                @mouseleave="scaleDown($event)"
                 class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"
             >
               <FontAwesomeIcon :icon="faAppStoreIos" class="mr-2 w-6 h-6" />

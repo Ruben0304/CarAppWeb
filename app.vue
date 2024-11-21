@@ -4,12 +4,14 @@
     <div class="pt-20"> <!-- Añadimos padding-top aquí -->
       <NuxtPage />
     </div>
+    <Footer/>
     <DownloadFAB/>
   </div>
 </template>
 
 <script setup lang="ts">
 
+import Footer from "~/components/Footer.vue";
 </script>
 
 <style>
