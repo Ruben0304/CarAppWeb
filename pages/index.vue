@@ -5,9 +5,6 @@
       <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div
             class="text-center z-10 px-6"
-            v-motion
-            :initial="{ opacity: 0, y: 50 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 600 } }"
         >
           <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-800 dark:text-white">
             Redefiniendo Tu <span class="text-primary dark:text-primary-light">Experiencia Automotriz</span>
@@ -35,7 +32,7 @@
 
         <!-- Floating Chevron -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown class="text-gray-400 dark:text-gray-600 w-10 h-10" />
+          <Car class="text-gray-400 dark:text-gray-600 w-10 h-10" />
         </div>
 
         <!-- Background Car Icon -->
@@ -57,9 +54,6 @@
             <div
                 v-for="(feature, index) in features"
                 :key="index"
-                v-motion
-                :initial="{ opacity: 0, y: 20 }"
-                :enter="{ opacity: 1, y: 0, transition: { duration: 600, delay: index * 100 } }"
                 class="flex items-start space-x-4"
             >
               <div class="bg-blue-100 p-3 rounded-full dark:bg-blue-900">
@@ -103,30 +97,32 @@
       </section>
 
       <!-- Descargar Section -->
-      <section id="descargar" class="py-20  dark:text-white text-dark-main">
-        <div class="container mx-auto px-6 text-center">
-          <h2 class="text-4xl font-bold mb-8">Descarga CarApp Hoy</h2>
-          <p class="text-xl mb-12 max-w-2xl mx-auto">
-            Experimenta el futuro de los servicios automotrices. Disponible en plataformas Android e iOS.
-          </p>
-          <div class="flex justify-center space-x-6">
-            <a
-                href="#"
-                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"
-            >
-              <FontAwesomeIcon :icon="faAndroid" style="color: forestgreen" class="mr-2 w-6 h-6" />
-              App Android
-            </a>
-            <a
-                href="#"
-                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"
-            >
-              <FontAwesomeIcon :icon="faAppStoreIos" class="mr-2 w-6 h-6" />
-              App iOS
-            </a>
-          </div>
-        </div>
-      </section>
+<!--      <section id="descargar" class="py-20  dark:text-white text-dark-main">-->
+<!--        <div class="container mx-auto px-6 text-center">-->
+<!--          <h2 class="text-4xl font-bold mb-8">Descarga CarApp Hoy</h2>-->
+<!--          <p class="text-xl mb-12 max-w-2xl mx-auto">-->
+<!--            Experimenta el futuro de los servicios automotrices. Disponible en plataformas Android e iOS.-->
+<!--          </p>-->
+<!--          <div class="flex justify-center space-x-6">-->
+<!--            <a-->
+<!--                href="#"-->
+<!--                @mouseover="scaleUp($event)"-->
+<!--                @mouseleave="scaleDown($event)"-->
+<!--                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"-->
+<!--            >-->
+<!--              <FontAwesomeIcon :icon="faAndroid" style="color: forestgreen" class="mr-2 w-6 h-6" />-->
+<!--              App Android-->
+<!--            </a>-->
+<!--            <a-->
+<!--                href="#"-->
+<!--                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"-->
+<!--            >-->
+<!--              <FontAwesomeIcon :icon="faAppStoreIos" class="mr-2 w-6 h-6" />-->
+<!--              App iOS-->
+<!--            </a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
 
       <!-- Términos Section -->
       <section id="terminos" class="py-20">
@@ -223,27 +219,8 @@ import {
   Users,
   MessageCircle
 } from 'lucide-vue-next'
-import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
-import {faAndroid, faAppStoreIos} from "@fortawesome/free-brands-svg-icons";
 
-// Contact Form
-const contactForm = ref({
-  name: '',
-  email: '',
-  message: ''
-})
 
-// Form Submission
-const submitForm = () => {
-  console.log('Form submitted:', contactForm.value)
-  contactForm.value = {
-    name: '',
-    email: '',
-    message: ''
-  }
-}
-// Dark Mode State
-const isDarkMode = ref(false)
 
 // Features Data
 const features = [
@@ -273,10 +250,7 @@ const features = [
 const carIcon = ref(null)
 
 const handleScroll = () => {
-  if (carIcon.value) {
-    const rotation = window.scrollY / 2
-    carIcon.value.style.transform = `rotate(${rotation}deg)`
-  }
+
 }
 
 // Button Scale Effects
@@ -288,11 +262,6 @@ const scaleDown = (event) => {
   event.target.style.transform = 'scale(1)'
 }
 
-// Dark Mode Toggle (to be implemented with your specific toggle method)
-const toggleDarkMode = () => {
-  isDarkMode.value = !isDarkMode.value
-  document.documentElement.classList.toggle('dark', isDarkMode.value)
-}
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
