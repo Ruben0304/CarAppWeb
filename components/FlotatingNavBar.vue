@@ -158,7 +158,7 @@
             <li class="pt-4 border-t dark:border-primary-dark">
               <button
                   v-if="!isLoggedIn"
-                  @click="login"
+                  @click="navigateToAuth"
                   class="w-full flex items-center justify-center px-4 py-2
                   rounded-full bg-primary text-bg-gradient-start
                   hover:bg-primary-light
