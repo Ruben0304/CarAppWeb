@@ -1,1 +1,8 @@
+User-agent: *
+Disallow: /auth
+Allow: /
+Allow: /parts
+Allow: /cars
+Allow: /search
+Sitemap: https://car-app-web-chi.vercel.app/sitemap.xml
 

@@ -1,13 +1,13 @@
 <template>
   <div :class="'min-h-screen duration-300'">
-    <main>
+    <main class="pt-24">
       <!-- Hero Section -->
-      <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section class=" overflow-hidden">
         <div
             class="text-center z-10 px-6"
         >
           <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-800 dark:text-white">
-            Redefiniendo Tu <span class="text-primary dark:text-primary-light">Experiencia Automotriz</span>
+            Redefiniendo Tu <span class="text-primary dark:text-primary-light">Vida Automotriz</span>
           </h1>
           <p class="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Alquila autos, compra repuestos, conéctate con mecánicos y únete a una vibrante comunidad automotriz, todo en una sola aplicación.
@@ -30,22 +30,11 @@
           </div>
         </div>
 
-        <!-- Floating Chevron -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <Car class="text-gray-400 dark:text-gray-600 w-10 h-10" />
-        </div>
 
-        <!-- Background Car Icon -->
-        <div
-            ref="carIcon"
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-10"
-        >
-          <Car class="w-[600px] text-primary dark:text-primary-light" />
-        </div>
       </section>
 
       <!-- Características Section -->
-      <section id="caracteristicas" class="py-20">
+      <section id="caracteristicas" class="pt-36">
         <div class="container mx-auto px-6">
           <h2 class="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white">
             Nuestras Características
@@ -96,33 +85,33 @@
         </div>
       </section>
 
-      <!-- Descargar Section -->
-<!--      <section id="descargar" class="py-20  dark:text-white text-dark-main">-->
-<!--        <div class="container mx-auto px-6 text-center">-->
-<!--          <h2 class="text-4xl font-bold mb-8">Descarga CarApp Hoy</h2>-->
-<!--          <p class="text-xl mb-12 max-w-2xl mx-auto">-->
-<!--            Experimenta el futuro de los servicios automotrices. Disponible en plataformas Android e iOS.-->
-<!--          </p>-->
-<!--          <div class="flex justify-center space-x-6">-->
-<!--            <a-->
-<!--                href="#"-->
-<!--                @mouseover="scaleUp($event)"-->
-<!--                @mouseleave="scaleDown($event)"-->
-<!--                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"-->
-<!--            >-->
-<!--              <FontAwesomeIcon :icon="faAndroid" style="color: forestgreen" class="mr-2 w-6 h-6" />-->
-<!--              App Android-->
-<!--            </a>-->
-<!--            <a-->
-<!--                href="#"-->
-<!--                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"-->
-<!--            >-->
-<!--              <FontAwesomeIcon :icon="faAppStoreIos" class="mr-2 w-6 h-6" />-->
-<!--              App iOS-->
-<!--            </a>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </section>-->
+       Descargar Section
+      <section id="descargar" class="py-20  dark:text-white text-dark-main">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl font-bold mb-8">Descarga CarApp Hoy</h2>
+          <p class="text-xl mb-12 max-w-2xl mx-auto">
+            Experimenta el futuro de los servicios automotrices. Disponible en plataformas Android e iOS.
+          </p>
+          <div class="flex justify-center space-x-6">
+            <a
+                href="#"
+                @mouseover="scaleUp($event)"
+                @mouseleave="scaleDown($event)"
+                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"
+            >
+              <FontAwesomeIcon :icon="faAndroid" style="color: forestgreen" class="mr-2 w-6 h-6" />
+              App Android
+            </a>
+            <a
+                href="#"
+                class="bg-white text-primary px-8 py-3 rounded-full font-semibold shadow-lg flex items-center dark:bg-gray-800 dark:text-primary-light"
+            >
+              <FontAwesomeIcon :icon="faAppStoreIos" class="mr-2 w-6 h-6" />
+              App iOS
+            </a>
+          </div>
+        </div>
+      </section>
 
       <!-- Términos Section -->
       <section id="terminos" class="py-20">
@@ -154,7 +143,7 @@
         </div>
       </section>
 
-      <!-- Contacto Section -->
+<!--       Contacto Section -->
 <!--      <section id="contacto">-->
 <!--        <div class="container mx-auto px-6">-->
 <!--          <h2 class="text-4xl font-bold mb-12 text-center text-gray-800 dark:text-white">-->
@@ -219,6 +208,8 @@ import {
   Users,
   MessageCircle
 } from 'lucide-vue-next'
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+import {faAndroid, faAppStoreIos} from "@fortawesome/free-brands-svg-icons";
 
 
 
