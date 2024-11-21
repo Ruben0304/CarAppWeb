@@ -1,64 +1,62 @@
 <template>
-  <div class="container mx-auto px-4 py-6">
-    <!-- Loading State -->
-    <div v-if="isLoading" class="flex justify-center items-center min-h-[400px]">
-      <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
-    </div>
-
-    <!-- Error State -->
-    <div v-else-if="error" class="text-center text-red-500 py-8">
-      <p>Error loading products. Please try again later.</p>
-      <button
-          @click="fetchProducts"
-          class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-      >
-        Retry
-      </button>
-    </div>
-
-    <!-- Products Grid -->
-    <div
-        v-else
-        class="flex justify-center items-center min-h-screen"
-    >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-            class="grid grid-cols-1
-             sm:grid-cols-1
-             md:grid-cols-3
-             lg:grid-cols-4
-             xl:grid-cols-5
-             gap-4 sm:gap-6 lg:gap-8
-             animate-fade-in"
-        >
-          <ProductCard
-              v-for="product in products"
-              name="Nombre del producto"
-              partType="Tipo de parte"
-              imageUrl="https://pngimg.com/d/engine_PNG20.png"
-              price="$99.99"
-              :isFavorite="false"
-              :rating="4.5"
-              @favoriteClick="handleFavoriteClick"
-          />
-        </div>
+  <div class="min-h-screen  sm:px-6 lg:px-0">
+    <div class="w-full mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <CarCard
+            v-for="(car, index) in cars"
+            :key="index"
+            :car="car"
+            @toggle-favorite="toggleFavorite(index)"
+        />
       </div>
-    </div>
-    <!-- Empty State -->
-    <div v-if="!isLoading && !error && products.length === 0" class="text-center py-8 text-gray-500">
-      No products found.
     </div>
   </div>
 </template>
 
 <script setup>
-import ProductCard from './ProductCard.vue'
-import {useProducts} from '../composables/useProducts'
+import { ref } from 'vue'
+import CarCard from './CarCard.vue'
 
-const {products, isLoading, error, fetchProducts} = useProducts()
+const cars = ref([
+  {
+    name: "Porsche 718 Cayman S",
+    type: "Coupé",
+    image: "https://pngimg.com/d/maserati_PNG28.png",
+    seats: 2,
+    transmission: "Manual",
+    pricePerDay: 400,
+    isFavorite: false
+  },
+  {
+    name: "BMW M2 Competition",
+    type: "Coupé",
+    image: "https://pngimg.com/d/maserati_PNG28.png",
+    seats: 4,
+    transmission: "Automatic",
+    pricePerDay: 350,
+    isFavorite: false
+  },
+  {
+    name: "Audi RS5 Sportback",
+    type: "Sportback",
+    image: "https://pngimg.com/d/maserati_PNG28.png",
+    seats: 5,
+    transmission: "Automatic",
+    pricePerDay: 450,
+    isFavorite: false
+  },
+  {
+    name: "Mercedes-AMG GT",
+    type: "Coupé",
+    image: "https://pngimg.com/d/maserati_PNG28.png",
+    seats: 2,
+    transmission: "Automatic",
+    pricePerDay: 500,
+    isFavorite: false
+  }
+])
 
-const handleFavoriteClick = (productId) => {
-  // Aquí iría la lógica para manejar el favorito
-  console.log(`Toggle favorite for product ${productId}`)
+const toggleFavorite = (index) => {
+  cars.value[index].isFavorite = !cars.value[index].isFavorite
 }
 </script>
